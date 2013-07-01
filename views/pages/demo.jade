@@ -1,0 +1,818 @@
+html.no-js(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width')
+    title #{title}
+    link(rel='stylesheet', href='stylesheets/normalize.css')
+    link(rel='stylesheet', href='stylesheets/app.css')
+    script(src='javascripts/vendor/custom.modernizr.js')
+  body
+    include ../includes/nav
+    .row(style="padding-top:50px")
+      include ../includes/demo/side
+      .large-9.columns
+        h4.text-center Navigation
+        hr
+        #doc-pagination.row
+          .large-12.columns
+            h5 Pagination
+            ul.pagination
+              li.arrow.unavailable
+                a(href='') «
+              li.current
+                a(href='') 1
+              li
+                a(href='') 2
+              li
+                a(href='') 3
+              li
+                a(href='') 4
+              li.unavailable
+                a(href='') …
+              li
+                a(href='') 12
+              li
+                a(href='') 13
+              li.arrow
+                a(href='') »
+        hr
+        #doc-sidenav.row
+          .large-12.columns
+            h5 Side Nav
+            .row
+              .large-4.columns.end
+                ul.side-nav
+                  li.active
+                    a(href='#') Link 1
+                  li
+                    a(href='#') Link 2
+                  li.divider
+                  li
+                    a(href='#') Link 3
+                  li
+                    a(href='#') Link 4
+        hr
+        #doc-subnav.row
+          .large-12.columns
+            h5 Sub Nav
+            dl.sub-nav
+              dt Filter:
+              dd.active
+                a(href='#') All
+              dd
+                a(href='#') Active
+              dd
+                a(href='#') Pending
+              dd
+                a(href='#') Suspended
+        hr
+        #doc-topbar.row
+          .large-12.columns
+            h5 Top Bar
+            nav.top-bar
+              ul.title-area
+                //- Title Area 
+                li.name
+                  h1
+                    a(href='#') Top Bar
+                //- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone 
+                li.toggle-topbar.menu-icon
+                  a(href='#')
+                    span Menu
+              section.top-bar-section
+                ul.left
+                  li.divider
+                  li.has-dropdown
+                    a(href='#') Item 1
+                    ul.dropdown
+                      li.title.back.js-generated
+                        h5
+                          a(href='#') « Back
+                      li
+                        label Level One
+                      li
+                        a(href='#') Sub-item 1
+                      li
+                        a(href='#') Sub-item 2
+                      li.divider
+                      li
+                        a(href='#') Sub-item 3
+                      li.has-dropdown
+                        a(href='#') Sub-item 4
+                        ul.dropdown
+                          li.title.back.js-generated
+                            h5
+                              a(href='#') « Back
+                          li
+                            label Level Two
+                          li.has-dropdown
+                            a(href='#') Sub-item 1
+                            ul.dropdown
+                              li.title.back.js-generated
+                                h5
+                                  a(href='#') « Back
+                              li
+                                label Level Three
+                              li.has-dropdown
+                                a(href='#') Sub-item 1
+                                ul.dropdown
+                                  li.title.back.js-generated
+                                    h5
+                                      a(href='#') « Back
+                                  li
+                                    label Level Four
+                                  li
+                                    a(href='#') Sub-item 1
+                              li
+                                a(href='#') Sub-item 2
+                              li
+                                a(href='#') Sub-item 3
+                              li.divider
+                              li
+                                a(href='#') Sub-item 4
+                          li
+                            a(href='#') Sub-item 2
+                          li
+                            a(href='#') Sub-item 3
+                          li
+                            a(href='#') Sub-item 4
+                      li
+                        a(href='#') Sub-item 5
+                  li.divider
+                //- Right Nav Section 
+                ul.right
+                  li.divider.hide-for-small
+                  li
+                    a(href='#')
+                      | Messages
+                      span.top-bar-unread 3
+                  li.divider.hide-for-small
+                  li
+                    a(href='#') Item 2
+        hr
+        #doc-breadcrumbs.row
+          .large-12.columns
+            h5 Breadcrumbs
+            ul.breadcrumbs
+              li
+                a(href='#') Home
+              li
+                a(href='#') Features
+              li.unavailable
+                a(href='#') Gene Splicing
+              li.current
+                a(href='#') Cloning
+        hr
+        .row
+          .large-12.columns
+            h4.text-center Buttons
+            hr
+            h5  Almost Flat Buttons
+            table#doc-almost-flat-buttons
+              thead
+                tr
+                  th(style='width: 30%;') Button
+                  th(style='width: 30%;') class=""
+                  th Description
+              tbody
+                tr
+                  td
+                    button.button.primary(type='button') Primary
+                  td
+                    code button primary
+                  td
+                    | Provides extra visual weight and identifies the primary action in a set of buttons
+                tr
+                  td
+                    button.button.primary-dark(type='button') Primary Dark
+                  td
+                    code button primary-dark
+                  td
+                    | Provides extra visual weight and identifies the primary action in a set of buttons
+                tr
+                  td
+                    button.button.secondary(type='button') Secondary
+                  td
+                    code button secondary
+                  td Standard gray button with gradient
+                tr
+                  td
+                    button.button.highlight(type='button') Highlight
+                  td
+                    code button highlight
+                  td To highlight some extraordinary action
+                tr
+                  td
+                    button.button.highlight-dark(type='button') Highlight Dark
+                  td
+                    code button highlight-dark
+                  td To highlight some extraordinary action
+                tr
+                  td
+                    button.button.info(type='button') Info
+                  td
+                    code button info
+                  td Used as an alternative to the default styles
+                tr
+                  td
+                    button.button.info-dark(type='button') Info Dark
+                  td
+                    code button info-dark
+                  td Used as an alternative to the default styles
+                tr
+                  td
+                    button.button.success(type='button') Success
+                  td
+                    code button success
+                  td Indicates a successful or positive action
+                tr
+                  td
+                    button.button.success-dark(type='button') Success Dark
+                  td
+                    code button success-dark
+                  td Indicates a successful or positive action
+                tr
+                  td
+                    button.button.success-darker(type='button') Success Darker
+                  td
+                    code button success-darker
+                  td Indicates a successful or positive action
+                tr
+                  td
+                    button.button.success-darkest(type='button') Success Darkest
+                  td
+                    code button success-darkest
+                  td Indicates a successful or positive action
+                tr
+                  td
+                    button.button.warning(type='button') Warning
+                  td
+                    code button warning
+                  td Indicates caution should be taken with this action
+                tr
+                  td
+                    button.button.warning-dark(type='button') Warning Dark
+                  td
+                    code button warning-dark
+                  td Indicates caution should be taken with this action
+                tr
+                  td
+                    button.button.alert(type='button') Alert
+                  td
+                    code button alert
+                  td Indicates a dangerous or potentially negative action
+                tr
+                  td
+                    button.button.alert-dark(type='button') Alert Dark
+                  td
+                    code button alert-dark
+                  td Indicates a dangerous or potentially negative action
+                tr
+                  td
+                    button.button.inverse(type='button') Inverse
+                  td
+                    code button inverse
+                  td Alternate dark gray button, not tied to a semantic action or use
+                tr
+                  td
+                    button.button.inverse-dark(type='button') Inverse Dark
+                  td
+                    code button inverse-dark
+                  td Alternate dark gray button, not tied to a semantic action or use
+            hr
+            h5 Different Sizes
+            table
+              thead
+                tr
+                  th(style='width: 20%;') Button
+                  th(style='width: 20%;') class=""
+                  th Description
+              tbody
+                tr
+                  td
+                    button.button.tiny(type='button') Tiny
+                  td
+                    code button tiny
+                  td Tiny Button
+                tr
+                  td
+                    button.button.small(type='button') Small
+                  td
+                    code button small
+                  td Small Button
+                tr
+                  td
+                    button.button(type='button') Regular
+                  td
+                    code button
+                  td Regular Button
+                tr
+                  td
+                    button.button.large(type='button') Large
+                  td
+                    code button large
+                  td Large Button
+            hr
+            h5 Different Types
+            table
+              thead
+                tr
+                  th(style='width: 20%;') Button
+                  th(style='width: 20%;') class=""
+                  th Description
+              tbody
+                tr
+                  td
+                    button.button.radius(type='button') Radius
+                  td
+                    code button radius
+                  td Radius Button
+                tr
+                  td
+                    button.button.round(type='button') Round
+                  td
+                    code button round
+                  td Round Button
+                tr
+                  td
+                    button.button.disabled(type='button') Disabled
+                  td
+                    code button disabled
+                  td Disabled Button
+            hr
+            #doc-almost-flat-button-groups.row
+              .large-12.columns
+                h5 Almost Flat Buttons Groups
+                ul.button-group
+                  li
+                    a.small.button(href='#') Button 1
+                  li
+                    a.small.button(href='#') Button 2
+                  li
+                    a.small.button(href='#') Button 3
+                ul.button-group.radius
+                  li
+                    a.button.secondary(href='#') Button 1
+                  li
+                    a.button.secondary(href='#') Button 2
+                  li
+                    a.button.secondary(href='#') Button 3
+                  li
+                    a.button.secondary(href='#') Button 4
+                ul.button-group.round.even-3
+                  li
+                    a.button.alert(href='#') Button 1
+                  li
+                    a.button.alert(href='#') Button 2
+                  li
+                    a.button.alert(href='#') Button 3
+                ul.button-group.round.even-3
+                  li
+                    input.button.success(type='submit', value='Button 1')
+                  li
+                    input.button.success(type='submit', value='Button 2')
+                  li
+                    input.button.success(type='submit', value='Button 3')
+        //- Buttons End
+        hr
+        #doc-forms.row
+          .large-12.columns
+            h3.text-center Forms
+            hr
+            form.custom
+              fieldset
+                legend Fieldset
+                .row
+                  .large-12.columns
+                    label Input Label
+                    input(type='text', placeholder='large-12.columns')
+                .row
+                  .large-4.columns
+                    label Input Label
+                    input(type='text', placeholder='large-4.columns')
+                  .large-4.columns
+                    .row.collapse
+                      label Input Label
+                      .small-3.columns
+                        span.prefix http://
+                      .small-9.columns
+                        input(type='text', placeholder='small-9.columns')
+                  .large-4.columns
+                    .row.collapse
+                      label Input Label
+                      .small-9.columns
+                        input(type='text', placeholder='small-9.columns')
+                      .small-3.columns
+                        span.postfix .com
+                .row
+                  .large-12.columns
+                    label Textarea Label
+                    textarea(placeholder='small-12.columns')
+                .row
+                  .large-6.columns
+                    label.error Error
+                    input.error(type='text')
+                    small.error Invalid entry
+                  .large-6.columns.success
+                    label Success
+                    input(type='text')
+                    small Valid entry
+        hr
+        .row
+          .large-12.columns
+            h4.text-center Typography
+            hr
+            #doc-type.row
+              h5 Type
+              .large-12.columns
+                h1 h1. This is a very large header.
+                h2 h2. This is a large header.
+                h3 h3. This is a medium header.
+                h4 h4. This is a moderate header.
+                h5 h5. This is a small header. h1.
+                h6 h6. This is a tiny header. h1.
+                hr
+                h1.subheader h1.subheader
+                h2.subheader h2.subheader
+                h3.subheader h3.subheader
+                h4.subheader h4.subheader
+                h5.subheader h5.subheader
+                h6.subheader h6.subheader
+                hr
+                h1
+                  | h1.
+                  small Small segment header.
+                h2
+                  | h2.
+                  small Small segment header.
+                h3
+                  | h3.
+                  small Small segment header.
+                h4
+                  | h4.
+                  small Small segment header.
+                h5
+                  | h5.
+                  small Small segment header.
+                h6
+                  | h6.
+                  small Small segment header.
+                hr
+                p
+                  | This is a paragraph. Paragraphs are preset with a font size, line height and spacing to match the overall vertical rhythm. To show what a paragraph looks like this needs a little more content so, did you know that there are storms occurring on Jupiter that are larger than the Earth? Pretty cool. Wrap
+                  code <strong>
+                  | around type to
+                  strong make it bold!
+                  | . You can also use
+                  code <em>
+                  | to
+                  em italicize your words
+                  | .
+                hr
+                h6 Links
+                p
+                  | Links are very standard, and the
+                  a(href='http://www.youtube.com/watch?v=oHg5SJYRHA0') color is preset
+                  | to the Foundation primary color.
+                hr
+                h6 Lists
+                p Lists are helpful for, well, lists of things.
+                .row
+                  .large-4.columns
+                    h6 ul.disc
+                    ul.disc
+                      li List item with a much longer description or more content.
+                      li List item
+                      li
+                        | List item
+                        ul
+                          li Nested List Item
+                          li Nested List Item
+                          li Nested List Item
+                      li List item
+                      li List item
+                      li List item
+                  .large-4.columns
+                    h6 ul.circle
+                    ul.circle
+                      li List item with a much longer description or more content.
+                      li List item
+                      li
+                        | List item
+                        ul
+                          li Nested List Item
+                          li Nested List Item
+                          li Nested List Item
+                      li List item
+                      li List item
+                      li List item
+                  .large-4.columns
+                    h6 ul.square
+                    ul.square
+                      li List item with a much longer description or more content.
+                      li List item
+                      li
+                        | List item
+                        ul
+                          li Nested List Item
+                          li Nested List Item
+                          li Nested List Item
+                      li List item
+                      li List item
+                      li List item
+                .row
+                  .large-4.columns
+                    h6 Ordered Lists
+                    ol
+                      li List Item 1
+                      li
+                        | List Item 2
+                        ol
+                          li Nested List Item
+                          li Nested List Item
+                          li Nested List Item
+                      li List Item 3
+                  .large-8.columns
+                    h6 Definition Lists
+                    dl
+                      dt Definition Title
+                      dd
+                        | Definition Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                hr
+                a(name='blockquotes')
+                h6 Blockquotes
+                p
+                  | Sometimes other people say smart things, and you may want to mention that through a blockquote callout. We've got you covered.
+                blockquote
+                  | I do not fear computers. I fear the lack of them. Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur.
+                  cite Isaac Asimov
+                hr
+                h6 V-Cards
+                p
+                  | Here's a handy microformat-friendly list to
+                  em address
+                  | all your needs.
+                ul.vcard
+                  li.fn Gaius Baltar
+                  li.street-address 123 Colonial Ave.
+                  li.locality Caprica City
+                  li
+                    span.state Caprica
+                    | ,
+                    span.zip 12345
+                  li.email
+                    a(href='#') g.baltar@cmail.com
+            hr
+            #doc-labels.row
+              .large-12.columns
+                h5 Labels
+                p
+                  span.label Regular Label
+                  br
+                  span.radius.secondary.label Radius Secondary Label
+                  br
+                  span.round.alert.label Round Alert Label
+                  br
+                  span.success.label Success Label
+                  br
+        hr
+        .row
+          .large-12.columns
+            h4.text-center CSS Components
+            hr
+            #doc-alert-boxes.row
+              .large-12.columns
+                h5 Alert Boxes
+                .alert-box.radius(data-alert='')
+                  | This is a standard alert (div.alert-box).
+                  a.close(href='') ×
+                .alert-box.success(data-alert='')
+                  | This is a success alert (div.alert-box.success).
+                  a.close(href='') ×
+                .alert-box.alert.round(data-alert='')
+                  | This is an alert (div.alert-box.alert.round).
+                  a.close(href='') ×
+                .alert-box.secondary(data-alert='')
+                  | This is a secondary alert (div.alert-box.secondary).
+                  a.close(href='') ×
+            hr
+            #doc-panels.row
+              .large-12.columns
+                h5 Panels
+                .row
+                  .large-6.columns
+                    .panel
+                      h5 This is a regular panel.
+                      p It has an easy to override visual style, and is appropriately subdued.
+                  .large-6.columns
+                    .panel.callout.radius
+                      h5 This is a callout panel.
+                      p It's a little ostentatious, but useful for important content.
+            hr
+            #doc-pricing-tables.row
+              .large-12.columns
+                h5 Pricing Table
+                .row
+                  .large-6.columns.large-centered
+                    ul.pricing-table
+                      li.title Standard
+                      li.price $99.99
+                      li.description An awesome description
+                      li.bullet-item 1 Database
+                      li.bullet-item 5GB Storage
+                      li.bullet-item 20 Users
+                      li.cta-button
+                        a.button.success.radius(href='#') Buy Now
+            hr
+            #doc-progress-bars.row
+              .large-12.columns
+                h5 Progress Bars
+                .progress.large-6
+                  span.meter(style='width: 40%;')
+                .radius.progress.success.large-8
+                  span.meter(style='width: 80%;')
+                .nice.round.progress.alert.large-10
+                  span.meter(style='width: 30%;')
+                .nice.secondary.progress
+                  span.meter(style='width: 50%;')
+            hr
+            #doc-tables.row
+              .large-12.columns
+                h5 Tables
+                table
+                  thead
+                    tr
+                      th(width='200') Table Header
+                      th Table Header
+                      th(width='150') Table Header
+                      th(width='150') Table Header
+                  tbody
+                    tr
+                      td Content Goes Here
+                      td This is longer content Donec id elit non mi porta gravida at eget metus.
+                      td Content Goes Here
+                      td Content Goes Here
+                    tr
+                      td Content Goes Here
+                      td
+                        | This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.
+                      td Content Goes Here
+                      td Content Goes Here
+                    tr
+                      td Content Goes Here
+                      td
+                        | This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.
+                      td Content Goes Here
+                      td Content Goes Here
+            hr
+            #doc-thumbnails.row
+              .large-12.columns
+                h5 Thumbnails
+                a.th(href='http://lorempixel.com/400/200')
+                  img(src='http://lorempixel.com/400/200')
+            hr
+        .row
+          .large-12.columns
+            h4.text-center Javascript
+            hr
+            #doc-clearing.row
+              .large-12.columns
+                h5 Clearing
+                ul.clearing-thumbs(data-clearing='data-clearing')
+                  li
+                    a.th(href='http://lorempixel.com/800/600')
+                      img(src='http://lorempixel.com/200/100', data-caption='caption here...')
+                  li
+                    a.th(href='http://lorempixel.com/800/600')
+                      img(src='http://lorempixel.com/200/100', data-caption='caption 2 here...')
+                  li
+                    a.th(href='http://lorempixel.com/800/600')
+                      img(src='http://lorempixel.com/200/100', data-caption='caption 3 here...')
+        #doc-section.row
+          .large-12.columns
+            h5 Sections
+            hr
+            h6 Auto
+            .section-container.auto(data-section='data-section')
+              section.section
+                p.title
+                  a(href='#panel1') Section 1
+                .content
+                  p Content of section 1.
+              section.section
+                p.title
+                  a(href='#panel2') Section 2
+                .content
+                  p Content of section 2.
+            hr
+            .row
+              .large-12.columns
+                h6 Tabs
+                .section-container.tabs(data-section='data-section')
+                  section.section
+                    p.title
+                      a(href='#panel1') Section 1
+                    .content
+                      p Content of section 1.
+                  section.section
+                    p.title
+                      a(href='#panel2') Section 2
+                    .content
+                      p Content of section 2.
+            hr
+            .row
+              .large-12.columns
+                h6 Accordion
+                .section-container.accordion(data-section='data-section')
+                  section.section
+                    p.title
+                      a(href='#panel1') Section 1
+                    .content
+                      p Content of section 1.
+                  section.section
+                    p.title
+                      a(href='#panel2') Section 2
+                    .content
+                      p Content of section 2.
+            hr
+            .row
+              .large-12.columns
+                h6 Vertical Nav
+                .row
+                  .large-3.columns
+                    .section-container.vertical-nav(data-section='vertical-nav')
+                      section.section
+                        p.title
+                          a(href='#') Section 1
+                        .content
+                          ul.side-nav
+                            li
+                              a(href='#') Link 1
+                            li
+                              a(href='#') Link 2
+                            li
+                              a(href='#') Link 3
+                            li.divider
+                            li
+                              a(href='#') Link 1
+                      section.section
+                        p.title
+                          a(href='#') Section 2
+                        .content
+                          ul.side-nav
+                            li
+                              a(href='#') Link 1
+                            li
+                              a(href='#') Link 2
+                            li
+                              a(href='#') Link 3
+                            li.divider
+                            li
+                              a(href='#') Link 1
+                  .large-9.columns
+                    p Content to the right of the navigation.
+            hr
+            .row
+              .large-12.columns
+                h6 Horizontal Nav
+                .section-container.horizontal-nav(data-section='horizontal-nav')
+                  section.section
+                    p.title
+                      a(href='#') Section 1
+                    .content
+                      ul.side-nav
+                        li
+                          a(href='#') Link 1
+                        li
+                          a(href='#') Link 2
+                        li
+                          a(href='#') Link 3
+                        li.divider
+                        li
+                          a(href='#') Link 1
+                  section.section
+                    p.title
+                      a(href='#') Section 2
+                    .content
+                      ul.side-nav
+                        li
+                          a(href='#') Link 1
+                        li
+                          a(href='#') Link 2
+                        li
+                          a(href='#') Link 3
+                        li.divider
+                        li
+                          a(href='#') Link 1
+        hr
+        #doc-tooltips.row
+          .large-12.columns
+            h5 Tooltips
+            p
+              span.has-tip.tip-top.noradius(data-tooltip='', title='I\'m on the top and have tons and tons of content in me.') "Tip-top" (hehe)
+              | ,
+              span.has-tip.tip-left(data-tooltip='left', title='I\'m on the left!') "tip-left"
+              | , or
+              span.has-tip.tip-right(data-tooltip='right', title='I\'m on the right!') "tip-right"
+    
+        include ../includes/foot 
