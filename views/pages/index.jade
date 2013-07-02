@@ -3,15 +3,22 @@ extends ../layout
 block content
   include ../includes/splash
   .row(ng-controller="JadeDemos")
-    .large-2.columns(style="margin: 20px 0;")
+    .small-2.columns.text-left(style="margin: 20px 0;")
       img.th(src="http://www.gravatar.com/avatar/{{github.gravatar_id}}?s=300", ng-model="github.avatar_url")
-    .large-10.columns
-      .row
-        .small-3.columns.text-right
-          p Username:
-        .small-9.columns.text-left
-          p {{github.login}}
-    hr
+      p {{coderbits.name}}
+      p {{coderbits.title}}
+      p {{coderbits.location}}
+      p {{coderbits.website_link}}
+      p {{coderbits.bio}}
+      p {{coderbits.views}}
+      p {{coderbits.rank}}
+    .large-10.columns.text-left
+      label Filter Badges: showing 20 of {{coderbits.badges.length}}
+        input(type="text", ng-model="search.name")
+      div(ng-repeat="(key, value) in coderbits.badges | filter:search | limitTo:20")
+        img(src="{{value.image_link}}", style="width:20px;")  
+        |  {{value.name}}
+        hr
     .large-12.columns.text-left
       .row
         .small-2.columns.text-right
@@ -39,16 +46,17 @@ block content
           button.button(ng-click="listGithub()") Get Github URL
           button.button(ng-click="listCoderbits()") Get Coderbits Client
 
-      .row.panel(style="margin: 50px 0; overflow: hidden")
-        pre Debug Info: 
-        hr
-        pre name = {{name}}
-        pre stringArray = {{stringArray}}
-        pre items = {{items}}
-        pre selectedItems = {{selectedItems}}
-        pre github = {{github}}
-        pre coderbits = {{coderbits}}
+      //- .row.panel(style="margin: 50px 0; overflow: hidden")
+      //-   pre Debug Info: 
+      //-   hr
+      //-   pre name = {{name}}
+      //-   pre stringArray = {{stringArray}}
+      //-   pre items = {{items}}
+      //-   pre selectedItems = {{selectedItems}}
+      //-   pre github = {{github}}
+      //-   pre coderbits = {{coderbits}}
   script.
+    var jadeDemos = angular.module('jadeApp', []);
 
     JadeDemos = function ($scope, $http) {
 
@@ -59,9 +67,9 @@ block content
           });
       })();
 
-      $scope.listCoderbits = function () {
+      $scope.listCoderbits = (function () {
         $http({method: "JSONP", url: "https://coderbits.com/dhz.json?callback=loadCoderbits"})
-      };
+      })();
 
       loadCoderbits = function (data) {
         $scope.coderbits = data;
