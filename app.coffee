@@ -16,7 +16,6 @@ app.set "view engine", "jade"
 
 app.use express.static path.join __dirname, "public"
 
-
 if process.env.NODE_ENV == "development"
   app.set "port", 1337
   app.use express.errorHandler

@@ -2,5 +2,63 @@ extends ../layout
 
 block content
   include ../includes/splash
-  .row: .large-12.columns.text-left
-    p Suckas
+  .row
+    .large-12.columns.text-left(ng-controller="JadeDemos")
+      .row.panel(style="margin: 50px 0")
+        pre Debug Info: 
+        hr
+        pre name = {{name}}
+        pre stringArray = {{stringArray}}
+        pre items = {{items}}
+        pre selectedItems = {{selectedItems}}
+      .row
+        .small-2.columns.text-right
+          p First Name:
+        .large-10.columns.text-left    
+          input(type="text", ng-model="name.first")
+      .row
+        .small-2.columns.text-right
+          p Last Name:
+        .large-10.columns.text-left    
+          input(type="text", ng-model="name.last")
+
+      .row
+        .small-2.columns.text-right
+          p Items
+        .large-10.columns
+          select(ng-model="selectedItems", ng-options="string for string in stringArray")
+
+      .row
+        .large-10.columns.push-2
+          ul
+            li(ng-repeat="item in items"){{item.name.first}} {{item.string}}
+        .large-10.columns
+          button.button(ng-click="updateForm()") {{buttonText.save}}
+          button.button(ng-click="add()") {{buttonText.add}}
+
+  script.
+
+    JadeDemos = function($scope) {
+      $scope.buttonText = {
+        save: "Save",
+        add: "Add"
+      };
+
+
+      $scope.updateForm = function() {
+        $scope.buttonText.save = "Updated";
+      }
+
+      $scope.add = function() {
+        $scope.buttonText.add = "Added";
+        $scope.items.push({name: {first: $scope.name.first, last: $scope.name.last}, string: $scope.selectedItems});
+      }
+      
+      $scope.name = {
+        "first": "Dave",
+        "last": "Higginbotham"
+      }
+
+      $scope.items = [];
+      $scope.stringArray = ['dave', 'higgy', 'is', 'the', 'coolest'];
+    };
