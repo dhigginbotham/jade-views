@@ -13,12 +13,14 @@ block content
       p {{coderbits.views}}
       p {{coderbits.rank}}
     .large-10.columns.text-left
-      label Filter Badges: showing 20 of {{coderbits.badges.length}}
-        input(type="text", ng-model="search.name")
-      div(ng-repeat="(key, value) in coderbits.badges | filter:search | limitTo:20")
-        img(src="{{value.image_link}}", style="width:20px;")  
-        |  {{value.name}}
+      .panel
+        label Filter Badges: showing 20 of {{coderbits.badges.length}}
+          input.large(type="text", ng-model="search.name")
         hr
+        p(ng-repeat="(key, value) in coderbits.badges | filter:search | limitTo:20")
+          img(src="{{value.image_link}}", style="width:20px;")  
+          |  {{value.name}}
+      hr
     .large-12.columns.text-left
       .row
         .small-2.columns.text-right
